@@ -9,10 +9,11 @@ import org.springframework.context.annotation.Configuration;
  * @created : 07/04/2022,
  **/
 @Configuration
-public class LaurelCOnfiguration {
+public class Laurelonfig {
+
     @Bean
-    HearingInterpreter hearingInterpreter(WordProducer wordProducer) {
-        return new HearingInterpreter(wordProducer);
+    LaurelWordProducer laurelWordProducer() {
+        return new LaurelWordProducer();
     }
 }
 
