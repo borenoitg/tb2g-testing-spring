@@ -1,6 +1,5 @@
 package org.springframework.samples.petclinic.sfg;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Component;
  * @created : 07/04/2022,
  **/
 @Component
-@Primary
 public class LaurelWordProducer implements WordProducer {
     @Override
     public String getWord() {
