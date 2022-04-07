@@ -13,6 +13,6 @@ import org.springframework.stereotype.Component;
 public class LaurelWordProducer implements WordProducer {
     @Override
     public String getWord() {
-        return "Larel";
+        return "Laurel";
     }
 }
