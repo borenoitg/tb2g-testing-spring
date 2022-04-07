@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
  **/
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = {BaseConfig.class, Laurelonfig.class})
-public class HearingInterpreterJUnit4Test {
+public class HearingInterpreterLaurelJUnit4Test {
 
     @Autowired
     HearingInterpreter hearingInterpreter;
