@@ -15,11 +15,7 @@
  */
 package org.springframework.samples.petclinic.web;
 
-import java.util.Collection;
-import java.util.Map;
-
-import javax.validation.Valid;
-
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.service.ClinicService;
@@ -32,6 +28,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
+import java.util.Collection;
+import java.util.Map;
 
 /**
  * @author Juergen Hoeller
@@ -52,12 +52,12 @@ public class OwnerController {
     }
 
     @InitBinder
-    public void setAllowedFields(WebDataBinder dataBinder) {
+    public void setAllowedFields(@NotNull WebDataBinder dataBinder) {
         dataBinder.setDisallowedFields("id");
     }
 
     @RequestMapping(value = "/owners/new", method = RequestMethod.GET)
-    public String initCreationForm(Map<String, Object> model) {
+    public String initCreationForm(@NotNull Map<String, Object> model) {
         Owner owner = new Owner();
         model.put("owner", owner);
         return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
