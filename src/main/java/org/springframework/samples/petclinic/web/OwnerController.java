@@ -74,13 +74,13 @@ public class OwnerController {
     }
 
     @RequestMapping(value = "/owners/find", method = RequestMethod.GET)
-    public String initFindForm(Map<String, Object> model) {
+    public String initFindForm(@NotNull Map<String, Object> model) {
         model.put("owner", new Owner());
         return "owners/findOwners";
     }
 
     @RequestMapping(value = "/owners", method = RequestMethod.GET)
-    public String processFindForm(Owner owner, BindingResult result, Map<String, Object> model) {
+    public String processFindForm(@NotNull Owner owner, BindingResult result, Map<String, Object> model) {
 
         // allow parameterless GET request for /owners to return all records
         if (owner.getLastName() == null) {
@@ -105,7 +105,7 @@ public class OwnerController {
     }
 
     @RequestMapping(value = "/owners/{ownerId}/edit", method = RequestMethod.GET)
-    public String initUpdateOwnerForm(@PathVariable("ownerId") int ownerId, Model model) {
+    public String initUpdateOwnerForm(@PathVariable("ownerId") int ownerId, @NotNull Model model) {
         Owner owner = this.clinicService.findOwnerById(ownerId);
         model.addAttribute(owner);
         return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
