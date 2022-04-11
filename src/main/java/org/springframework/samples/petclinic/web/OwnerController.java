@@ -64,7 +64,7 @@ public class OwnerController {
     }
 
     @RequestMapping(value = "/owners/new", method = RequestMethod.POST)
-    public String processCreationForm(@Valid Owner owner, BindingResult result) {
+    public String processCreationForm(@Valid Owner owner, @NotNull BindingResult result) {
         if (result.hasErrors()) {
             return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
         } else {
